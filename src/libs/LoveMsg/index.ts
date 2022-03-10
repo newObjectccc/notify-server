@@ -11,16 +11,16 @@ dotenv.config()
 const { MESSAGE_TYPE } = process.env
 
 export default function main() {
-  if (MESSAGE_TYPE === 'goodAfternoon') {
+  // if (MESSAGE_TYPE === 'goodAfternoon') {
     // 午安
     goodAfternoon()
-  }
-  else if (MESSAGE_TYPE === 'goodEvening') {
+  // }
+  // else if (MESSAGE_TYPE === 'goodEvening') {
     // 晚安
     goodEvening()
-  }
-  else {
+  // }
+  // else {
     // 早安
     goodMorning()
-  }
+  // }
 }

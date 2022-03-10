@@ -23,7 +23,6 @@ const goodWord = async () => {
       API.getNetEaseCloud(), // 网易云热评
       API.getDayEnglish(), // 每日英语
     ])
-
     // 过滤掉异常数据
     const [sayLove, caiHongpi, oneWord, songLyrics, oneMagazines, netEaseCloud, dayEnglish] =
       dataSource.map((n) => (n.status === 'fulfilled' ? n.value : null))
