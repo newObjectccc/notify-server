@@ -156,4 +156,6 @@ type TextTemplateProps = {
   oneMagazines: OneMagazines | null
   netEaseCloud: NetEaseCloudProps | null
   dayEnglish: ResEnglishProps | null
+  zaoAn: any
+  pyqWenan: any
 }

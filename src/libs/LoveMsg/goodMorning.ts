@@ -22,9 +22,11 @@ const goodWord = async () => {
       API.getOneMagazines(), // one杂志
       API.getNetEaseCloud(), // 网易云热评
       API.getDayEnglish(), // 每日英语
+      API.getZaoan(), // 早安心语
+      API.getPyqwenan(), // 早安心语
     ])
     // 过滤掉异常数据
-    const [sayLove, caiHongpi, oneWord, songLyrics, oneMagazines, netEaseCloud, dayEnglish] =
+    const [sayLove, caiHongpi, oneWord, songLyrics, oneMagazines, netEaseCloud, dayEnglish, zaoAn, pyqWenan] =
       dataSource.map((n) => (n.status === 'fulfilled' ? n.value : null))
 
     // 对象写法
@@ -36,7 +38,11 @@ const goodWord = async () => {
       oneMagazines,
       netEaseCloud,
       dayEnglish,
+      zaoAn,
+      pyqWenan,
     }
+
+    console.log('zaoAn', zaoAn)
 
     const template = textTemplate(data)
     console.log('goodWord', template)

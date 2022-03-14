@@ -7,6 +7,10 @@ import { getTian } from '../utils/http'
 enum LoveMsgURL {
   // 天气接口：默认获取最近7天的数据
   weather = 'http://api.tianapi.com/tianqi/index',
+  // 早安心语
+  zaoan = 'http://api.tianapi.com/zaoan/index',
+  // 朋友圈文案
+  pyqwenan = 'http://api.tianapi.com/pyqwenan/index',
   // 每日简报
   dailyBriefing = 'http://api.tianapi.com/bulletin/index',
   // 今日头条
@@ -14,7 +18,7 @@ enum LoveMsgURL {
   // 最美宋词
   songLyrics = 'http://api.tianapi.com/zmsc/index',
   // 每日一句美好英语
-  dayEnglish = 'http://api.tianapi.com/everyday/index',
+  dayEnglish = 'http://api.tianapi.com/ensentence/index',
   // 韩寒主编的ONE一个杂志，本接口返回每日一句
   oneMagazines = 'http://api.tianapi.com/one/index',
   // 故事大全
@@ -53,6 +57,18 @@ class API {
   async getWeather(city_name: string): Promise<IWeatherResponseProps> {
     const res = await getTian({ url: LoveMsgURL.weather, params: { city: city_name } })
     console.log(res)
+    return res?.[0]
+  }
+
+  // 早安心语
+  async getZaoan(): Promise<any> {
+    const res = await getTian({ url: LoveMsgURL.zaoan })
+    return res?.[0]
+  }
+
+  // 朋友圈文案
+  async getPyqwenan(): Promise<any> {
+    const res = await getTian({ url: LoveMsgURL.pyqwenan })
     return res?.[0]
   }
 
